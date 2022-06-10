@@ -15,7 +15,7 @@ interface IERC20 {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-contract SimpleMultisigWallet is Initializable { // POC for MTS Safe
+contract SimpleMultisigWalletV2 is Initializable { // POC for MTS Safe
 
   address public superowner;
   address[] public owners;
@@ -28,7 +28,7 @@ contract SimpleMultisigWallet is Initializable { // POC for MTS Safe
   // }
 
   function initialize(address[] memory _owners, uint _numConfirmationsRequired) public initializer {
-    // require(msg.sender == superowner, "only owner able to do this function");
+    //require(msg.sender == superowner, "only owner able to do this function");
     require(_owners.length > 0, "owners required");
     require(_numConfirmationsRequired > 0 && _numConfirmationsRequired <= _owners.length, "invalid number of required confirmations");
 
@@ -84,21 +84,12 @@ contract SimpleMultisigWallet is Initializable { // POC for MTS Safe
   // mapping from fn_index => tx_index => owner => bool
   mapping(uint => mapping(uint => mapping(address => bool))) public isConfirmed;
 
-//   function store(address[] memory _owners, uint _numConfirmationsRequired) public onlyOwner {
-//     require(_owners.length > 0, "owners required");
-//     require(_numConfirmationsRequired > 0 && _numConfirmationsRequired <= _owners.length, "invalid number of required confirmations");
-
-//     for (uint i = 0; i < _owners.length; i++) {
-//        address owner = _owners[i];
-//        require(owner != address(0), "invalid owner");
-//        require(!isOwner[owner], "owner is existed"); 
-//        isOwner[owner] = true;
-//        owners.push(owner);
-//     }
-//     numConfirmationsRequired = _numConfirmationsRequired;
-//   }
-
   // TODO: function index list -> สำหรับใช้ระบุชนิดฟังก์ชั่น
+
+  function specifySuperowner() public { // ใครกดก็ได้ 
+    require(owners.length > 0, "owners do not equal to zero");
+    superowner = owners[0];
+  }
 
   function deposit() external payable {}
 

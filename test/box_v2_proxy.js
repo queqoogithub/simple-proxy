@@ -15,6 +15,8 @@ describe('BoxV2 (proxy)', function () {
  
     box = await upgrades.deployProxy(Box, [42], {initializer: 'store'});
     boxV2 = await upgrades.upgradeProxy(box.address, BoxV2);
+    console.log("boxV1: ", box.address);
+    console.log("boxV2: ", boxV2.address);
   });
  
   // Test case

@@ -14,12 +14,22 @@
       "address": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
       "txHash": "0x30d6753cd73e41f6afbf97929fd02b874944f83079822f4e878e84ca148137e7",
       "kind": "transparent"
+    },
+    {
+      "address": "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1",
+      "txHash": "0x522c206d1e995e4b6b69f11b63404778ead73f72099f313301940756dc2d75a0",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xc6e7DF5E7b4f2A278906862b61205850344D4e7d",
+      "txHash": "0x2e120b701110488b9ce27a63f6e5a33176619e10e92c2ede48ceb51d265d7e13",
+      "kind": "transparent"
     }
   ],
   "impls": {
     "925ac28bbf9839bef9f86ec5b41ec3785d913ce448340c01b8751ecba4a82e6f": {
       "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      "txHash": "0x9c4c0937a2b5350f282e4ef36d58c4161dd50d18178e7610489da22e387744ae",
+      "txHash": "0x421f3169a50d8c148e86e9c0945c968b1dcc81f41e7766076276746c789e28fd",
       "layout": {
         "storage": [
           {
@@ -57,6 +67,404 @@
           "t_uint256": {
             "label": "uint256",
             "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "b52a2f07977fd5e32e1321848d7973aef1b6b7bf231268b711880331aae227fb": {
+      "address": "0x0B306BF915C4d645ff596e518fAf3F9669b97016",
+      "txHash": "0xf55c225604e294efd8c1247d5ca60304ecbab35d6c93eb8aec8d1ea068e3d11c",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts\\proxy\\utils\\Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts\\proxy\\utils\\Initializable.sol:67"
+          },
+          {
+            "label": "superowner",
+            "offset": 2,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "SimpleMultisigWallet",
+            "src": "contracts\\PocMultisig.sol:20"
+          },
+          {
+            "label": "owners",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "SimpleMultisigWallet",
+            "src": "contracts\\PocMultisig.sol:21"
+          },
+          {
+            "label": "numConfirmationsRequired",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "SimpleMultisigWallet",
+            "src": "contracts\\PocMultisig.sol:22"
+          },
+          {
+            "label": "isOwner",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SimpleMultisigWallet",
+            "src": "contracts\\PocMultisig.sol:23"
+          },
+          {
+            "label": "sendTokenTxs",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_array(t_struct(SendTokenTx)3661_storage)dyn_storage",
+            "contract": "SimpleMultisigWallet",
+            "src": "contracts\\PocMultisig.sol:61"
+          },
+          {
+            "label": "multiSendFixedTokenFromContractTxs",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_array(t_struct(MultiSendFixedTokenFromContractTx)3674_storage)dyn_storage",
+            "contract": "SimpleMultisigWallet",
+            "src": "contracts\\PocMultisig.sol:62"
+          },
+          {
+            "label": "isConfirmed",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint256,t_mapping(t_uint256,t_mapping(t_address,t_bool)))",
+            "contract": "SimpleMultisigWallet",
+            "src": "contracts\\PocMultisig.sol:85"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(MultiSendFixedTokenFromContractTx)3674_storage)dyn_storage": {
+            "label": "struct SimpleMultisigWallet.MultiSendFixedTokenFromContractTx[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(SendTokenTx)3661_storage)dyn_storage": {
+            "label": "struct SimpleMultisigWallet.SendTokenTx[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IERC20)3552": {
+            "label": "contract IERC20",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+            "label": "mapping(uint256 => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_uint256,t_mapping(t_address,t_bool)))": {
+            "label": "mapping(uint256 => mapping(uint256 => mapping(address => bool)))",
+            "numberOfBytes": "32"
+          },
+          "t_struct(MultiSendFixedTokenFromContractTx)3674_storage": {
+            "label": "struct SimpleMultisigWallet.MultiSendFixedTokenFromContractTx",
+            "members": [
+              {
+                "label": "token",
+                "type": "t_contract(IERC20)3552",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "to",
+                "type": "t_array(t_address)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "executed",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "numConfirmations",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_struct(SendTokenTx)3661_storage": {
+            "label": "struct SimpleMultisigWallet.SendTokenTx",
+            "members": [
+              {
+                "label": "token",
+                "type": "t_contract(IERC20)3552",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "to",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "executed",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "numConfirmations",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "04f9e456ce64e5584383a654afcb537ce4bd5c87cd6c2a8a64bd5371cc94b649": {
+      "address": "0x59b670e9fA9D0A427751Af201D676719a970857b",
+      "txHash": "0x6ad4811b8b9a567f892f68c9daf9bacf85fb8bd8c77fdfcc4f27f6ca95ffc7d9",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts\\proxy\\utils\\Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin\\contracts\\proxy\\utils\\Initializable.sol:67"
+          },
+          {
+            "label": "superowner",
+            "offset": 2,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "SimpleMultisigWalletV2",
+            "src": "contracts\\PocMultisigV2.sol:20"
+          },
+          {
+            "label": "owners",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "SimpleMultisigWalletV2",
+            "src": "contracts\\PocMultisigV2.sol:21"
+          },
+          {
+            "label": "numConfirmationsRequired",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "SimpleMultisigWalletV2",
+            "src": "contracts\\PocMultisigV2.sol:22"
+          },
+          {
+            "label": "isOwner",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "SimpleMultisigWalletV2",
+            "src": "contracts\\PocMultisigV2.sol:23"
+          },
+          {
+            "label": "sendTokenTxs",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_array(t_struct(SendTokenTx)615_storage)dyn_storage",
+            "contract": "SimpleMultisigWalletV2",
+            "src": "contracts\\PocMultisigV2.sol:61"
+          },
+          {
+            "label": "multiSendFixedTokenFromContractTxs",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_array(t_struct(MultiSendFixedTokenFromContractTx)628_storage)dyn_storage",
+            "contract": "SimpleMultisigWalletV2",
+            "src": "contracts\\PocMultisigV2.sol:62"
+          },
+          {
+            "label": "isConfirmed",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint256,t_mapping(t_uint256,t_mapping(t_address,t_bool)))",
+            "contract": "SimpleMultisigWalletV2",
+            "src": "contracts\\PocMultisigV2.sol:85"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(MultiSendFixedTokenFromContractTx)628_storage)dyn_storage": {
+            "label": "struct SimpleMultisigWalletV2.MultiSendFixedTokenFromContractTx[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(SendTokenTx)615_storage)dyn_storage": {
+            "label": "struct SimpleMultisigWalletV2.SendTokenTx[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IERC20)506": {
+            "label": "contract IERC20",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+            "label": "mapping(uint256 => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_uint256,t_mapping(t_address,t_bool)))": {
+            "label": "mapping(uint256 => mapping(uint256 => mapping(address => bool)))",
+            "numberOfBytes": "32"
+          },
+          "t_struct(MultiSendFixedTokenFromContractTx)628_storage": {
+            "label": "struct SimpleMultisigWalletV2.MultiSendFixedTokenFromContractTx",
+            "members": [
+              {
+                "label": "token",
+                "type": "t_contract(IERC20)506",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "to",
+                "type": "t_array(t_address)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "executed",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "numConfirmations",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_struct(SendTokenTx)615_storage": {
+            "label": "struct SimpleMultisigWalletV2.SendTokenTx",
+            "members": [
+              {
+                "label": "token",
+                "type": "t_contract(IERC20)506",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "to",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "executed",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "numConfirmations",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
           }
         }
       }
